@@ -1,0 +1,36 @@
+Task 1 : 
+
+1. Upload CSV file using worker thread for this we are using concurrent-tasks - package 
+
+API : http://127.0.0.1:8000/api/v1/task-1/upload-csv
+Method Type : POST
+Request Body (multipart form data) :
+file : FILE
+
+2) Search API to find policy info with the help of the username.
+
+API : http://127.0.0.1:8000/api/v1/task-1/get-policy-by-username?search=Esmeralda
+Method Type : GET
+
+3) API to provide aggregated policy by each user.
+
+API : http://127.0.0.1:8000/api/v1/task-1/get-users-policies?search=
+Method Type : GET
+
+4) Consider each info as a different collection in MongoDB (Agent, User, User's Account, LOB, Carrier, Policy).
+
+The schemas for all collections can be found in the src/models/insurance directory.
+
+
+------------------------------------------------------------------------------------------------
+Task 2: Track real-time CPU utilization of the node server and on 70% usage restart the server.
+
+setInterval(checkCpuUsage, 1000 * 60);
+
+Present in index.ts file
+
+    1. The CPU usage monitoring is implemented in the checkCpuUsage function, located in the util/cpuUsage.ts file.
+    2. The monitoring interval is set to every minute using the setInterval function.
+    3. If the CPU usage exceeds the threshold of 70%, the server is restarted.
+
+-------------------------------------------------------------------------------------------
